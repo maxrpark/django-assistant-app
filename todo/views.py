@@ -39,7 +39,6 @@ class EditView(View):
         form = TaskForm(request.POST, instance=task)
         if form.is_valid():
             form.save()
-            print('form is valid')
             return HttpResponseRedirect('/todo')
         else:
             return render(request, 'todo/todo.html',)

@@ -12,22 +12,10 @@
   </div>
   <section class="main-container">
     <h2>Task List</h2>
-    {% if isEditing == false %}
-    <form
-      method="POST"
-      action="{%url 'todo'%}"
-      class="form-container"
-      type="submit"
-    >
-      {% csrf_token %} {{form.title}}
-      <button style="display: none" type="submit">Submit</button>
-    </form>
-    {% else %}
     <form method="POST" class="form-container" type="submit">
       {% csrf_token %} {{form.title}}
       <button style="display: none" type="submit">Submit</button>
     </form>
-    {% endif %}
     <div class="todo-list">
       <ul class="todo-container">
         {% for task in tasksList %}
@@ -58,9 +46,7 @@
                 />
               </svg>
             </a>
-
             <a href="{%url 'delete' task.pk  %}" class="btn delete">
-              <!-- <button class="btn delete">-->
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -72,7 +58,6 @@
                 />
               </svg>
             </a>
-            <!-- </button>-->
           </div>
         </li>
         {% endfor %}
