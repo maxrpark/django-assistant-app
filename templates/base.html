@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- styles -->
+    <link rel="stylesheet" href="{% static '/app.css' %}" />
+    <!-- favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="{% static '/favicon.ico' %}"
+    />
+
+    <title>Django Assitant</title>
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="navbar">
+        <a href="/" class="logo"> assistant</a>
+        <a href="/todo">Todo</a>
+      </div>
+    </nav>
+    {% block content %} {% endblock content %}
+    <footer>
+      <p>
+        Made with Django, by
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://twitter.com/MaxCodeJourney"
+        >
+          Maxi Ruti, </a
+        ><span id="year"></span>
+      </p>
+      <p>
+        Visit my other projects
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://my-portfolio-blog-website.netlify.app/"
+        >
+          My Portfolio Website
+        </a>
+      </p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script type="module" src="{% static 'js/base.js' %}"></script>
+    {% block script %} {% endblock script %}
+  </body>
+</html>
